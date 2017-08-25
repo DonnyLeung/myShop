@@ -11,7 +11,7 @@ if($verify == $verify1){
     $sql="select *from imooc_admin where username='{$username}' and password='{$password}'";
     $row=checkAdmin($sql);
     // print_r($row);
-    var_dump($row);
+    // var_dump($row);
     if ($row) {
         // 自动登录
         if($autoFlag){

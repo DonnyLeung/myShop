@@ -1,1 +1,1 @@
-upload.func.php
+<?php

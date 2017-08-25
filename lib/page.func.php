@@ -1,1 +1,1 @@
-page.func.php
+<?php
