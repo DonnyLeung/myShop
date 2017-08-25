@@ -1,0 +1,1 @@
+string.func.php

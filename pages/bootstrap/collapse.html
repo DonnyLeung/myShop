@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>手风琴（Collapse）</title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+</head>
+<body>
+<p>外部容器<code>.panel-group</code>，<br>
+	区域容器<code>.panel</code>，<br>
+	面板标题<code>.panel-heading</code>，标题<code>.panel-title</code> ，<br>
+	折叠区<code>.panel-collapse</code></p>
+<p>
+	若想内容区域不可视，则在<code>.panel-collapse</code>中添加<code>.collapse</code><br>
+	默认可视则再添加<code>.in</code>
+</p>
+ <p>属性 <code>data-parent="#外部容器ID"</code>，用于触发折叠时把这id区域内的其他面板关闭</p>
+<p>触发器<code>data-toggle="collapse"</code>属性，折叠对应区域<code>data-target="目标选择器"</code>或<code>href="目标选择器"</code></p>
+	<div class="panel-group" id="accordion">
+	    <div class="panel panel-default">
+	        <div class="panel-heading">
+	            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">标题一</a></h4>
+	        </div>
+	        <div id="collapseOne" class="panel-collapse collapse in">
+	            <div class="panel-body">标题一对应的内容</div>
+	        </div>
+	    </div>
+	    <div class="panel panel-default">
+	        <div class="panel-heading">
+	            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">标题二</a></h4>
+	        </div>
+	        <div id="collapseTwo" class="panel-collapse collapse">
+	            <div class="panel-body">标题二对应的内容</div>
+	        </div>
+	    </div>
+	    <div class="panel panel-default">
+	        <div class="panel-heading">
+	            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">标题三</a></h4>
+	        </div>
+	        <div id="collapseThree" class="panel-collapse collapse">
+	            <div class="panel-body">标题三对应的内容</div>
+	        </div>
+	    </div>
+	</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

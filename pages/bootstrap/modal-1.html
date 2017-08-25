@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>导入JavaScript插件</title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+</head>
+<body>
+<button class="btn btn-primary" type="button">点击我</button>
+<p><code>.fade</code>动画过渡</p>
+<p>JavaScript触发时的参数设置</p>
+<img src="./img/modal-1.jpg" alt="">
+<div class="modal fade" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">模态弹出窗标题</h4>
+      </div>
+      <div class="modal-body">
+        <p>模态弹出窗主体内容</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<br>
+<p>在Bootstrap框架中还为模态弹出窗提供了三种参数设置，具体说明如下：</p>
+<table border="1" cellpadding="7" cellspacing="0" style="background-color:white;">
+  <tbody>
+    <tr>
+      <td style="width:189px;padding:7px">
+      <p>参数</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>使用方法</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>描述</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:189px;padding:7px">
+      <p>toggle</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>$(“#mymodal”).modal(“toggle”)</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>触发时，反转模态弹出窗的状态。如果模态弹出窗是显示的，则关闭；反之，如果模态弹出窗是关闭的，则显示</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:189px;padding:7px">
+      <p>show</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>$(“#mymodal”).modal(“show”)</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>触发时，显示模态弹出窗</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:189px;padding:7px">
+      <p>hide</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>$(“#mymodal”).modal(“hide”)</p>
+      </td>
+      <td style="width:189px;padding:7px">
+      <p>触发时，关闭模态弹出窗</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<p>模态弹出窗还支持四种类型的事件，分别是模态弹出窗的弹出前、弹出后，关闭前、关闭后，具体描述如下：</p>
+<table border="1" cellpadding="0" cellspacing="0" style="background-color:white;">
+  <tbody>
+    <tr>
+      <td style="width:158px;padding:7px">
+      <p>事件类型</p>
+      </td>
+      <td style="width:409px;padding:7px">
+      <p>描述</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:158px;padding:7px">
+      <p>show.bs.modal</p>
+      </td>
+      <td style="width:409px;padding:7px">
+      <p>在show方法调用时立即触发（尚未显示之前）；如果单击了一个元素，那么该元素将作为事件的relatedTarget属性</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:158px;padding:7px">
+      <p>shown.bs.modal</p>
+      </td>
+      <td style="width:409px;padding:7px">
+      <p>该事件在模态弹出窗完全显示给用户之后（并且等CSS动画完成之后）触发；如果单击了一个元素，那么该元素将作为事件的relatedTarget事件</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:158px;padding:7px">
+      <p>hide.bs.modal</p>
+      </td>
+      <td style="width:409px;padding:7px">
+      <p>在hide方法调用时（但还未关闭隐藏）立即触发</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="width:158px;padding:7px">
+      <p>hidden.bs.modal</p>
+      </td>
+      <td style="width:409px;padding:7px">
+      <p>该事件在模态弹出窗完全隐藏之后（并且CSS动画漂完成之后）触发</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+  /*$(function(){
+    $(".btn").click(function(){
+      $("#mymodal").modal("toggle");
+    });
+  });*/
+  $(function(){
+    $(".btn").click(function(){
+        $("#mymodal").modal({
+            keyboard:false
+        });
+    });
+});
+</script>
+</body>
+</html>

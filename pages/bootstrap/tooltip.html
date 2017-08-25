@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>提示框 tooltip</title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+   <style id="jsbin-css">
+  body {
+    padding: 10px;
+  }
+  .btn {
+    margin: 20px 10px 20px;
+  }
+  </style>
+</head>
+<body>
+	<h3>按钮做的提示框</h3>
+	<p>提示信息：通过 <code>title</code> 属性的值来定义提示信息(也可以使用自定义属性 <code>data-original-title</code> 来设置提示信息)。<br><small>如果同时设置了 data-original-title 和 title 定义提示信息，那么 data-original-title 的优先级要高于 title。</small></p>
+	<p>提示位置：通过 <code>data-placement</code> 自定义属性来控制提示信息框的位置，根据四种不同的位置，data-placement具有四个值：top、right、bottom和left，分别表示提示框出现的位置在顶部、右边、底部和左边。</p>
+	<p>还有一个最重要的参数不可缺少，<code>data-toggle="tooltip"</code>。</p>
+	<p class="text-danger">声明式必须通过<code>$('[data-toggle="tooltip"]').tooltip()</code>触发，或用js触发。</p>
+
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="left" 
+          data-original-title="提示框居左" 
+          title="">
+  提示框居左      
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="top" 
+          data-original-title="提示框在顶部">
+   提示框在顶部
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="bottom" 
+          data-original-title="提示框在底部">
+  提示框在底部             
+  </button>
+  <button type="button" 
+          class="btn btn-default" 
+          data-toggle="tooltip" 
+          data-placement="right" 
+          data-original-title="提示框居右">
+  提示框居右      
+  </button>
+  <h3>链接制作的提示框</h3>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="left" 
+     title="提示框居左">
+     提示框居左
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="top" 
+     title="提示框在顶部">
+     提示框在顶部
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="bottom" 
+     title="提示框在底部">
+     提示框在底部
+  </a>
+  <a class="btn btn-primary" 
+     data-toggle="tooltip" 
+     data-placement="right" 
+     title="提示框在居右">
+     提示框居右
+  </a>
+  <a href="##" 
+     class="btn btn-primary" 
+     id="myTooltip">
+     我是提示框
+  </a>
+  <a href="##" 
+     class="btn btn-primary" 
+     id="myTooltip2">
+     我是提示框2
+  </a>
+  <h4>声明式其他属性：<img src="./img/tooltip-1.jpg" alt=""></h4>
+  <br><br>
+  <h4>JS设置参数方法：<img src="./img/tooltip-2.jpg" alt=""></h4>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#myTooltip').tooltip({
+      title:'title: "由js触发" , placement: "top"',
+      placement:'top'
+    });
+  });
+</script>
+</body>
+</html>

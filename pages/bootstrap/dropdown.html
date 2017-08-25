@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+</head>
+<body>
+<h3>示例1</h3>
+<p>父容器 <code>.dropdown</code></p>
+<p>触发按钮 被点击的菜单项链接或按钮需要添加自定义属性 <code>data-toggle="dropdown"</code></p>
+<p>下拉内容 <code>.dropdown-menu</code></p>
+<br>
+<p>如果触发下拉菜单的元素是<code>&lt;a&gt;</code>标签，为了避免点击链接，页面跳到顶部，可以使用data-target="#"来替代href="#"：<code>&lt;a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html"&gt;</code></p>
+
+<div class="navbar navbar-default" id="navmenu">
+    <a href="##" class="navbar-brand">W3cplus</a>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+      <a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+        <li role="presentation"><a href="##">CSS3</a></li>
+        <li role="presentation"><a href="##">HTML5</a></li>
+        <li role="presentation"><a href="##">Sass</a></li>
+      </ul>
+    </li>
+    <li><a href="##">前端论坛</a></li>
+    <li><a href="##">关于我们</a></li>
+  </ul>
+</div>
+
+<h3>示例2</h3>
+<ul class="nav nav-pills">
+  <li class="dropdown">
+    <a href="##" data-toggle="dropdown" class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+      <li role="presentation"><a href="##">CSS3</a></li>
+      <li role="presentation"><a href="##">HTML5</a></li>
+      <li role="presentation"><a href="##">Sass</a></li>
+    </ul>
+  </li>
+  <li class="active"><a href="##">前端论坛</a></li>
+  <li><a href="##">关于我们</a></li>
+</ul>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>

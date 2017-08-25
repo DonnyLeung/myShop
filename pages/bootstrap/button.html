@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>按钮插件</title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+</head>
+<body>
+<h3>按钮加载状态</h3>
+<button class="btn btn-primary" data-loading-text="正在加载中,请稍等..." type="button" id="loaddingBtn">加载</button>
+<br>
+<h3>模拟单选择按钮</h3>
+<p>单选按钮组 <code>data-toggle="buttons"</code></p>
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options1">男
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options2">女
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="options3">未知
+    </label>
+</div>
+<br>
+<h3>模拟多选择按钮</h3>
+<p>多选按钮组 <code>data-toggle="buttons"</code></p>
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options1">电影
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options2">音乐
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options3">游戏
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox" name="options" id="options4">摄影
+    </label>
+</div>
+<br>
+<h3>按钮状态切换</h3>
+<p>点击“激活”，再次点击“取消激活”，注意这里是 <code>data-toggle="buttons"</code></p>
+<button type="button" data-toggle="button" class="btn btn-primary">确认</button>
+
+
+<br><br>
+<h3>JavaScript用法</h3>
+<p>1、切换按钮状态（得到焦点）：<code>$("#mybutton").button("toggle")</code>
+<br>2、重新恢复按钮：<code>$("#mybutton").button("reset")</code>
+<br>3、任意参数：<code>$("#mybutton").button("任意字符参数名")</code></p>
+<p>替换 <code>data-任意字符参数名-text</code> 的属性值为<span class="text-danger">“按钮上显示的文本值”</span><br>
+例：<code>data-complete-text="Loading finished"</code></p>
+<div class="btn-group" data-toggle="buttons">
+    <button type="button" data-toggle="button" class="btn btn-primary" id="mybutton" data-complete-text="Loading finished" data-loading-text="Loading...">确认</button>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+$(function(){
+    $("#loaddingBtn").click(function () {
+        $(this).button("loading");
+      });
+});
+
+$(function() {
+    $("#mybutton").click(function(){
+        $(this).button('loading').delay(1000).queue(function() {
+            $(this).button('complete');//完成
+            // $("#mybutton").button("toggle");//切换
+            // $("#mybutton").button("reset");//重置
+         });
+    });
+ });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>弹出框 popover</title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+ <style>
+  body { padding: 10px; }
+ </style>
+</head>
+<body>
+	<p>而弹出框Popover和提示框tooltip相比，就多了一个content内容，那么在此使用 <code>data-content</code> 来定义弹出框中的内容。</p>
+	<p>提示框 tooltip 的默认触发事件是 hover 和 focus，而弹出框 popover 是 click</p>
+
+	<p>声明式依赖js触发<code>$('[data-toggle="popover"]').popover()</code></p>
+	<button type="button" 
+        class="btn btn-default" 
+        data-toggle="popover" 
+        data-placement="right" 
+        title="声明式" 
+        data-content="依赖js触发">
+        猛击我吧
+</button>
+<button type="button"
+          class="btn btn-default"
+          data-toggle="popover"
+          data-placement="bottom"
+          title="提示框居左"
+          data-content="我是弹出框的内容"
+          data-trigger="hover"
+          data-dalay="600">
+          触发方式hover
+  </button>
+	<p>js 触发</p>
+	<button type="button" class="btn btn-default" id="myPopover">猛击我吧</button>
+
+	<br><br><br>
+	<h4>声明式其他属性：<br><img src="./img/popover-1.jpg" alt=""></h4>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+	$(function(){
+		$('[data-toggle="popover"]').popover();
+	  $('#myPopover').popover({
+	     title:"js 触发",
+	     content:"js 触发",
+	     placement:"right"
+	  });
+	});
+</script>
+</body>
+</html>

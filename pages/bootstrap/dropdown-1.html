@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>下拉菜单--JavaScript触发方法</title>
+ <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+</head>
+<body>
+<ul class="nav nav-pills">
+    <li class="dropdown">
+        <a href="##"  class="dropdown-toggle" role="button" id="tutorial">教程<b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="tutorial">
+            <li role="presentation"><a href="##">CSS3</a></li>
+            <li role="presentation"><a href="##">HTML5</a></li>
+            <li role="presentation"><a href="##">Sass</a></li>
+        </ul>
+    </li>
+    <li class="active"><a href="##">前端论坛</a></li>
+    <li><a href="##">关于我们</a></li>
+</ul>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../common/js/bootstrap.min.js"></script>
+<script>
+// 使用JavaScript调用dropdown()方法后，单击激活按钮，会弹出下拉菜单，再次单击的时候会收起下拉菜单。
+/*$(function(){
+    $(".dropdown-toggle").dropdown();
+})*/
+
+// 还可以使用参数“toggle”。当下拉菜单隐藏时，调用dropdown(“toggle”)方法可以显示下拉菜单，反之，如果下拉菜单显示时，调用dropdown(“toggle”)方法可以让下拉菜单隐藏。
+/*$(function(){
+    $(".dropdown-toggle").dropdown("toggle");
+})*/
+
+// 不过使用该参数，每次单击都要两次toggle，就会一直是一个不变的状态。所以，一般情况下，使用示例中不带参数的方法。就算你需要使用参数“toggle”，也建议使用jQuery的one方法：
+$(".dropdown-toggle").one("click",function(){
+    $(this).dropdown("toggle");
+})
+</script>
+</body>
+</html>
