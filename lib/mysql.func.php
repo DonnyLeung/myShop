@@ -53,7 +53,7 @@ function updata($table,$array,$where=null){
  */
 function delete($table,$where=null){
 	$where=$where==null?null:"where".$where;
-	$sql;="delete from {$table} {$where}";
+	$sql="delete from {$table} {$where}";
 	mysql_query($sql);
 	return mysql_affected_rows();
 }
@@ -76,7 +76,7 @@ function fetchOne($sql,$result_type=MYSQL_ASSOC){
  *  @param [string] $result_type
  * 	@return multitype
  */
-function fetchAll($sql;,$result_type=MYSQL_ASSOC){
+function fetchAll($sql,$result_type=MYSQL_ASSOC){
 	$result=mysql_query($sql);
 	while (@$row=mysql_fetch_array($result,$result_type)) {
 		$rows[]=$row;
