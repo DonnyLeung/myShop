@@ -33,47 +33,51 @@
 			</div>
  	</div>
  	
- 	<div class="col-md-2">
- 		<div class="panel panel-default">
- 			<div class="panel-heading">管理员</div>
- 			<div class="pamel-body" id="left_nav">
- 				<dl>
- 					<dt>商品管理</dt>
- 					<dd>商品修改</dd>
- 					<dd>商品分类</dd>
- 					<dt>订单管理</dt>
- 					<dd>订单列表</dd>
- 					<dd>订单详情</dd>
- 					<dd>退订</dd>
- 				</dl>
- 			</div>
- 		</div>
+ 	<div id="panel_body">
+	 	<div class="col-md-2">
+	 		<div class="panel panel-default">
+	 			<div class="panel-heading">管理员</div>
+	 			<div class="pamel-body" id="left_nav">
+	 				<dl>
+	 					<dt>商品管理</dt>
+	 					<dd @click="changeTab('商品修改',1)">商品修改</dd>
+	 					<dd v-on:click="changeTab('商品分类',1)">商品分类</dd>
+	 					<dt>订单管理</dt>
+	 					<dd @click="changeTab('订单列表',-1)">订单列表</dd>
+	 					<dd @click="changeTab('订单详情',-1)">订单详情</dd>
+	 					<dd @click="changeTab('退订',-1)">退订</dd>
+	 				</dl>
+	 			</div>
+	 		</div>
+	 	</div>
+
+	 	<div class="col-md-10">
+	 		<!-- 选项卡组件（菜单项nav-tabs） -->
+			<ul id="myTab" class="nav nav-tabs" role="tablist">
+			    <li class="active"><a href="#bulletin" role="tab" data-toggle="tab">公告</a></li>
+			    <li><a href="#rule" role="tab" data-toggle="tab">规则</a></li>
+			    <li><a href="#forum" role="tab" data-toggle="tab">论坛</a></li>
+			 <li><a href="#security" role="tab" data-toggle="tab">安全</a></li>
+			 <li><a href="#welfare" role="tab" data-toggle="tab">公益</a></li>
+			</ul>
+			<!-- 选项卡面板 -->
+			<div id="myTabContent" class="tab-content">
+			 <div class="tab-pane active" id="bulletin">
+			 	<iframe src="./order.html" class="col-md-12"></iframe>	
+			 </div>
+			 <div class="tab-pane" id="rule">规则内容面板</div>
+			 <div class="tab-pane" id="forum">论坛内容面板</div>
+			 <div class="tab-pane" id="security">安全内容面板</div>
+			 <div class="tab-pane" id="welfare">公益内容面板</div>
+			</div>
+	 	</div>
  	</div>
- 	
- 	<div class="col-md-10">
- 	<div class="panel panel-default">
- 		<div class="panel-heading">产品管理</div>
- 		<div class="panel-body">
- 			
- 			<table class="table table-bordered">
- 				<thead>
- 					<tr>
- 						<th>商品编号</th>
- 						<th>商品名称</th>
- 						<th>品牌</th>
- 						<th>分类</th>
- 						<th>库存</th>
- 					</tr>
- 				</thead>
- 			</table>
- 		</div>
- 	</div>	
- 	</div>
+
  </div>
 
 
-<!-- 	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
- <script src="../common/js/bootstrap.min.js"></script> -->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+ <script src="../common/js/bootstrap.min.js"></script>
   <script src="../common/js/vue.min.js"></script>
   <!-- <script src="../common/js/vue-resource.js"></script> -->
   <script src="./js/tab.js"></script>
